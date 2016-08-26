@@ -1,13 +1,14 @@
 <?php
 
-namespace Joblocal\Laravel\GAHelper\Query;
+namespace Joblocal\LaravelGAHelper\Query;
 
-use Joblocal\Laravel\GAHelper\Models\Model;
+use Joblocal\LaravelGAHelper\Models\Model;
 
 class Builder
 {
     /**
-     * Analytic api
+     * Analytics api
+     *
      * @var mixin
      */
     protected $analytics;
@@ -19,6 +20,7 @@ class Builder
 
     /**
      * The raw response from ga
+     *
      * @var mixin
      */
     protected $results;
@@ -40,6 +42,7 @@ class Builder
 
     /**
      * Set the profile id for ga
+     *
      * @param  int    $profile_id
      * @return Builder
      */
@@ -51,6 +54,7 @@ class Builder
 
     /**
      * Set the from date (2016-01-01 / yesterday)
+     *
      * @param  string $from
      * @return Builder
      */
@@ -62,6 +66,7 @@ class Builder
 
     /**
      * Set the to date (2016-01-01 / yesterday)
+     *
      * @param  string $to
      * @return Builder
      */
@@ -73,6 +78,7 @@ class Builder
 
     /**
      * Set the metric
+     *
      * @param  string $metric
      * @return Builder
      */
@@ -84,7 +90,8 @@ class Builder
 
     /**
      * Set the dimensions
-     * @param  array  $dimensions
+     *
+     * @param array  $dimensions
      * @return Builder
      */
     public function dimensions(array $dimensions)
@@ -95,7 +102,8 @@ class Builder
 
     /**
      * Set the maximum results of the request (ga max. 10000)
-     * @param  integer $max_results
+     *
+     * @param integer $max_results
      * @return Builder
      */
     public function maxResults(int $max_results = 1000)
@@ -106,6 +114,7 @@ class Builder
 
     /**
      * Set the offset
+     *
      * @param integer $offset
      * @return Builder
      */
@@ -117,7 +126,8 @@ class Builder
 
     /**
      * Set the page (calculate the offset with the maxResults)
-     * @param  integer $page
+     *
+     * @param integer $page
      * @return Builder
      */
     public function page(int $page = 1)
@@ -126,6 +136,11 @@ class Builder
         return $this;
     }
 
+    /**
+     * Returns raw result
+     *
+     * @return mixed
+     */
     public function getResultRawData()
     {
         if (!$this->results) {
@@ -136,6 +151,7 @@ class Builder
 
     /**
      * Fetch the data from GA
+     *
      * @return Builder
      */
     public function get()
@@ -169,7 +185,8 @@ class Builder
 
     /**
      * Returns an array of model objects
-     * @param  boolean $refresh
+     *
+     * @param boolean $refresh
      * @return Model[]
      */
     public function all(bool $refresh = false)
@@ -179,6 +196,7 @@ class Builder
 
     /**
      * Get the total results
+     *
      * @return int
      */
     public function getTotalResults()
@@ -189,6 +207,7 @@ class Builder
 
     /**
      * Get the count of pages
+     *
      * @return int
      */
     public function getPageCount()
@@ -198,9 +217,9 @@ class Builder
     }
 
     /**
-     *
      * Returns the data of one row in a key value pair with the dimensions name as key.
-     * @param  array  $data
+     *
+     * @param array $data
      * @return array
      */
     public function getDataByDimensions(array $data)

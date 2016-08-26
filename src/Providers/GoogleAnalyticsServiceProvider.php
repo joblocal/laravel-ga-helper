@@ -8,6 +8,8 @@ use \Google_Service_Analytics;
 
 class GoogleAnalyticsServiceProvider extends ServiceProvider
 {
+    private $source = __DIR__.'/../config/googleAnalytics.php';
+
     /**
      * Perform post-registration booting of services.
      *
@@ -15,9 +17,13 @@ class GoogleAnalyticsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/googleAnalytics.php' => config_path('googleAnalytics.php'),
-        ]);
+        if ($this->app instanceof LaravelApplication) {
+            $this->publishes([
+                $this->source => config_path('googleAnalytics.php'),
+            ]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('googleAnalytics');
+        }
     }
 
     /**
@@ -28,7 +34,7 @@ class GoogleAnalyticsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/googleAnalytics.php',
+            $this->source,
             'googleAnalytics'
         );
         $this->app->bind('googleAnalytics', function () {

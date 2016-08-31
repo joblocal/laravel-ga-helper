@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Joblocal\LaravelGAHelper\Tests;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

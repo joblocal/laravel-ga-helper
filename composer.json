@@ -25,12 +25,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Joblocal\\Laravel\\GAHelper\\": "src/" }
+      "Joblocal\\LaravelGAHelper\\": "src/"
+    }
   },
   "autoload-dev": {
-    "classmap": [
-      "tests/"
-    ]
+    "psr-4": {
+      "Joblocal\\LaravelGAHelper\\Tests\\": "tests"
+    }
   },
   "scripts": {
     "lint": [

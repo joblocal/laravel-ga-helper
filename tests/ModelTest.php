@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Joblocal\LaravelGAHelper\Tests;
 
-use Joblocal\Laravel\GAHelper\Models\Model;
+use Joblocal\LaravelGAHelper\Models\Model;
 
 class ModelTest extends TestCase
 {

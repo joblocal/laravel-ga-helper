@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests;
+namespace Joblocal\LaravelGAHelper\Tests;
 
 class GoogleAnalyticsServiceProviderTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return ['Joblocal\Laravel\GAHelper\Providers\GoogleAnalyticsServiceProvider'];
+        return ['Joblocal\LaravelGAHelper\Providers\GoogleAnalyticsServiceProvider'];
     }
 
     protected function getEnvironmentSetUp($app)

@@ -1,19 +1,21 @@
 <?php
 
-namespace Joblocal\Laravel\GAHelper\Models;
+namespace Joblocal\LaravelGAHelper\Models;
 
-use Joblocal\Laravel\GAHelper\Query\Builder;
+use Joblocal\LaravelGAHelper\Query\Builder;
 
 class Model
 {
     /**
      * attributes
+     *
      * @var array
      */
     protected $attributes = [];
 
     /**
      * Google analytics query builder.
+     *
      * @var Builder
      */
     protected $builder;
@@ -120,6 +122,7 @@ class Model
 
     /**
      * Return the data in a new model
+     *
      * @param  string $modelClass
      * @return mixin
      */
@@ -132,6 +135,7 @@ class Model
 
     /**
      * Get data array of the result models
+     *
      * @param  boolean $refresh Execute the get method again
      * @return Model[]
      */

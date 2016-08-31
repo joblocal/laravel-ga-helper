@@ -1,6 +1,6 @@
 <?php
 
-namespace Joblocal\Laravel\GAHelper\Providers;
+namespace Joblocal\LaravelGAHelper\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use \Google_Client;

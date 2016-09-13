@@ -14,7 +14,7 @@
   "require": {
     "php": "^7",
     "google/apiclient": "^2.0",
-    "illuminate/support": "5.2.*"
+    "illuminate/support": ">5.2"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
